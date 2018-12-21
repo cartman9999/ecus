@@ -21,6 +21,8 @@
         "react-dom": "^15.4.2"
     },
     "dependencies": {
-        "highcharts-react-official": "^2.0.0"
+        "highcharts": "^7.0.1",
+        "highcharts-react-official": "^2.0.0",
+        "react-google-charts": "^2.0.29"
     }
 }
