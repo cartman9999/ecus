@@ -11,9 +11,9 @@ Para manipular fechas se utilizó la librería Carbon incluída en Laravel.
 Para desplegar la gráfica se ocupo la librería React Google Charts.
 
 <h3><b>Prerrequisitos:</b></h3>
-<li>
-  <ul>PHP7+</ul>
-  <ul>Mysql</ul>
-  <ul>Mysql Workbench</ul>
-  <ul>XAMPP</ul> 
-</li>
+<ul>
+  <li>PHP7+</li>
+  <li>Mysql</li>
+  <li>Mysql Workbench</li>
+  <li>XAMPP</li> 
+</ul>
