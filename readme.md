@@ -1,14 +1,19 @@
 <h1>ECUS - Comparación de USD respecto a MXN</h1>
 
-Desarrollado por Eric Montes de Oca Juárez.
+<i>Desarrollado por Eric Montes de Oca Juárez.<i>
 
 Para el desarrollo de este proyecto se ocupo en Backend el Framework Laravel y en frontend React.js.
+<br>
 Por medio de la API: https://www.currencyconverterapi.com/ se obtiene la conversión de moneda.
+<br>
 Para manipular fechas se utilizó la librería Carbon incluída en Laravel.
+<br>
 Para desplegar la gráfica se ocupo la librería React Google Charts.
 
-Prerrequisitos:
-PHP7+
-Mysql
-Mysql Workbench
-XAMPP 
+<h3><b>Prerrequisitos:</b></h3>
+<li>
+  <ul>PHP7+</ul>
+  <ul>Mysql</ul>
+  <ul>Mysql Workbench</ul>
+  <ul>XAMPP</ul> 
+</li>
