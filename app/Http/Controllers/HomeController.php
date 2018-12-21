@@ -32,6 +32,8 @@ class HomeController extends Controller
         $today = Carbon::now()->toDateString();
         $contador = 0;
 
+        $usd_mxn[0] = ["Fecha" , "Cambio USD-MXN"];
+
         while($contador < 7) {
             $resta = 7 - $contador;
             $date = Carbon::now()->subDays($resta)->toDateString();
@@ -39,7 +41,7 @@ class HomeController extends Controller
             $json = file_get_contents("https://free.currencyconverterapi.com/api/v6/convert?q=USD_MXN,MXN_USD&compact=ultra&date=" . $date);
             $obj = json_decode($json, true);
 
-            $usd_mxn[$contador] = $date . '|' . $obj['USD_MXN'][$date];
+            $usd_mxn[$contador+1] = [$date , $obj['USD_MXN'][$date]];
 
             $contador++;
             \Log::info('Aumenta dia');

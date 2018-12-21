@@ -41766,24 +41766,26 @@ var Example = function (_Component) {
 
 
     _this.state = {
-      valores: {}
+      valores: [0, 0]
     };
     return _this;
   }
 
   _createClass(Example, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      var _this2 = this;
+
       __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/days').then(function (response) {
         console.log(response);
-        var today = response.data.today;
-        var last_week = response.data.last_week;
-        this.setState({ valores: [1, 7] });
+        _this2.setState({ valores: response.data });
       });
     }
   }, {
     key: 'render',
     value: function render() {
+      console.log('STATE');
+      console.log(this.state);
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'App' },
@@ -41791,8 +41793,19 @@ var Example = function (_Component) {
           'div',
           { className: "my-pretty-chart-container" },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_google_charts__["a" /* Chart */], {
-            chartType: 'Bar',
-            data: [["Fecha", "Conversion"], ['2018-12-21', 5]],
+            chartType: 'LineChart',
+            data: this.state.valores,
+            options: {
+              title: 'USD respecto MXN',
+              chartArea: { width: '75%' },
+              hAxis: {
+                title: 'Fecha',
+                minValue: 10
+              },
+              vAxis: {
+                title: 'Cambio'
+              }
+            },
             width: '100%',
             height: '400px',
             legendToggle: true

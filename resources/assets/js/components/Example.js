@@ -11,28 +11,40 @@ class Example extends Component {
 
     // Set the state directly. Use props if necessary.
     this.state = {
-      valores: {}
+      valores: [0,0]
     }
   }
 
-  componentDidMount(){
-        axios.get('/days').then(function (response) {
+  componentWillMount(){
+        axios.get('/days').then(response => {
             console.log(response);
-            var today = response.data.today;
-            var last_week = response.data.last_week;
-            this.setState({valores: [1,7]})
+            this.setState({valores: response.data});
           })
+        
     }
 
   render() {
+    console.log('STATE');
+    console.log(this.state);
     return (
       <div className="App">
         <div className={"my-pretty-chart-container"}>
           <Chart
-            chartType="Bar"
-            data={[["Fecha", "Conversion"], 
-                    ['2018-12-21',5]
-                    ]}
+            chartType="LineChart"
+            data={ 
+                    this.state.valores
+                    }
+            options={{
+                      title: 'USD respecto MXN',
+                      chartArea: { width: '75%' },
+                      hAxis: {
+                        title: 'Fecha',
+                        minValue: 10,
+                      },
+                      vAxis: {
+                        title: 'Cambio',
+                      },
+                    }}
             width="100%"
             height="400px"
             legendToggle
