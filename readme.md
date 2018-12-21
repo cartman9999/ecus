@@ -1,4 +1,4 @@
-ECUS - Comparación de USD respecto a MXN
+<h1>ECUS - Comparación de USD respecto a MXN</h1>
 
 Desarrollado por Eric Montes de Oca Juárez.
 
