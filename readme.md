@@ -13,7 +13,9 @@ Para desplegar la gráfica se ocupo la librería React Google Charts.
 <h3><b>Prerrequisitos:</b></h3>
 <ul>
   <li>PHP7+</li>
+  <li>Laravel 5.5</li>
   <li>Mysql</li>
   <li>Mysql Workbench</li>
+  <li>React</li>
   <li>XAMPP</li> 
 </ul>
