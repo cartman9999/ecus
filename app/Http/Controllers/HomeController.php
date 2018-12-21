@@ -30,6 +30,9 @@ class HomeController extends Controller
     public function getDays()
     {
         $today = Carbon::now()->toDateString();
+        \Log::info('HOY');
+        \Log::info($today);
+
         $contador = 0;
 
         $usd_mxn[0] = ["Fecha" , "Cambio USD-MXN"];
